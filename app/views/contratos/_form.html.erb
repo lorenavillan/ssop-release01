@@ -1,0 +1,74 @@
+
+<%= form_for(@contrato) do |f| %>
+  <% if @contrato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contrato.errors.count, "error") %> no han permitido que el contrato sea guardado:</h2>
+      <ul>
+      <% @contrato.errors.full_messages.each do |msg| %>
+        <li><font color="red"><%= msg %></font></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Obra' %><br />
+    <%= f.text_field :contrato_nombre_obra %>
+  </div>
+  <!-- autocompletar contratista -->
+  <div class="field", id="contratista_asociado">
+  <%= f.label 'Nombre Contratista/Empresa' %><br />
+  <%= text_field_tag :busq_nombre_contratista, nil,:size=>40,:placeholder => 'Ingrese Empresa/Contratista ...', :value => Contratista.find(@contrato.contratista_id).empresa %>
+  <%= f.hidden_field :contratista_id %>
+  </div>
+  <!-- fin autocompletar contratista -->
+
+  <div class="field">
+    <%= f.label 'Municipio' %><br />
+    <%= f.select :municipio_id, Municipio.find(:all, :order => "nombre").collect{|c| [c.nombre, c.id] } %>
+  </div>
+    <div class="field">
+    <%= f.label 'Localidad' %><br />
+    <%= f.select :localidad_id, Localidad.find(:all, :order => "nombre").collect{|c| [c.nombre, c.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label 'Tipo de Norma Legal' %><br />
+    <%= f.select :tipo_norma_legal_id, TipoNormaLegal.find(:all, :order => "tipo_norma_legal_descripcion").collect{|c| [c.tipo_norma_legal_descripcion, c.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label 'Nº Norma Legal '%><br />
+    <%= f.text_field :contrato_nro_norma_legal %>
+  </div>
+  <div class="field">
+    <%= f.label 'Año Norma Legal' %><br />
+    <%= f.text_field :contrato_anio_norma_legal %>
+  </div>
+  <div class="field">
+    <%= f.label 'Nº de Expediente (solo numeros)' %><br />
+    <%= f.text_field :contrato_expte %>
+  </div>
+  <div class="field">
+    <%= f.label 'Fecha del Contrato' %><br />
+    <%= f.text_field :contrato_fecha, :value => (@contrato.contrato_fecha.strftime('%d/%m/%Y') if @contrato.contrato_fecha) %>
+  </div>
+  <div class="field">
+    <%= f.label 'Monto de Contrato ($)' %><br />
+    <%= f.text_field :contrato_monto %>
+  </div>
+  <div class="field">
+    <%= f.label 'Plazo de Obra (dias)' %><br />
+    <%= f.text_field :contrato_plazo_obra %>
+  </div>
+  <div class="field">
+    <%= f.label 'Contrato Finalizado' %>
+    <%= f.check_box :finalizado %>
+  </div>
+  <div class="actions">
+    <br class="clearfix" />
+    <%= f.submit 'Guardar', :class=>'button' %>
+  </div>
+
+<% end %>
+
+
+<%= render(:partial => "javascripts") %>

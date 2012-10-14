@@ -1,0 +1,48 @@
+<div id="page">
+  <h5>Contratistas</h5>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @contratista.contratista_nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%= @contratista.contratista_apellido %>
+</p>
+
+<p>
+  <b>Empresa:</b>
+  <%= @contratista.empresa %>
+</p>
+
+<p>
+  <b>Contratista cuit:</b>
+  <%= @contratista.contratista_cuit %>
+</p>
+
+<p>
+  <b>Contratista domicilio legal:</b>
+  <%= @contratista.contratista_domicilio_legal %>
+</p>
+
+<p>
+  <b>Contratista telefono:</b>
+  <%= @contratista.contratista_telefono %>
+</p>
+
+<p>
+  <b>Contratista email:</b>
+  <%= @contratista.contratista_email %>
+</p>
+
+
+
+<%= link_to 'Editar', edit_contratista_path(@contratista) %> |
+<%= link_to 'Volver', contratistas_path %>
+
+<br class="clearfix" />
+<br class="clearfix" />
+
+</div>

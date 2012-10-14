@@ -1,0 +1,14 @@
+<script type="text/javascript">
+ $(document).ready(function () {
+     $("#new_tipo_norma_legal, .edit_tipo_norma_legal").validate({
+
+        rules: {
+        "tipo_norma_legal[tipo_norma_legal_descripcion]": {required: true, minlength: 3 , maxlength: 60 },        
+        }
+      });
+  
+});
+
+
+
+</script>

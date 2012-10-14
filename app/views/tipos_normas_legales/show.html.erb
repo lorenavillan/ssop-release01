@@ -1,0 +1,16 @@
+<div id="page">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo de Norma Legal:</b>
+  <%= @tipo_norma_legal.tipo_norma_legal_descripcion %>
+</p>
+
+
+<%= link_to 'Editar', edit_tipo_norma_legal_path(@tipo_norma_legal) %> |
+<%= link_to 'Volver', tipos_normas_legales_path %>
+
+<br class="clearfix" />
+<br class="clearfix" />
+
+</div>

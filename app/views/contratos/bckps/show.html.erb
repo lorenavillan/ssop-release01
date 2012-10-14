@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Contratista:</b>
+  <%= @contrato.contratista_id %>
+</p>
+
+<p>
+  <b>Tipo norma legal:</b>
+  <%= @contrato.tipo_norma_legal_id %>
+</p>
+
+<p>
+  <b>Municipio:</b>
+  <%= @contrato.municipio_id %>
+</p>
+
+<p>
+  <b>Localidad:</b>
+  <%= @contrato.localidad_id %>
+</p>
+
+<p>
+  <b>Contrato nombre obra:</b>
+  <%= @contrato.contrato_nombre_obra %>
+</p>
+
+<p>
+  <b>Contrato expte:</b>
+  <%= @contrato.contrato_expte %>
+</p>
+
+<p>
+  <b>Contrato nro norma legal:</b>
+  <%= @contrato.contrato_nro_norma_legal %>
+</p>
+
+<p>
+  <b>Contrato anio norma legal:</b>
+  <%= @contrato.contrato_anio_norma_legal %>
+</p>
+
+<p>
+  <b>Contrato fecha:</b>
+  <%= @contrato.contrato_fecha %>
+</p>
+
+<p>
+  <b>Contrato monto:</b>
+  <%= @contrato.contrato_monto %>
+</p>
+
+<p>
+  <b>Contrato plazo obra:</b>
+  <%= @contrato.contrato_plazo_obra %>
+</p>
+
+<p>
+  <b>Finalizado:</b>
+  <%= @contrato.finalizado %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%= @contrato.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_contrato_path(@contrato) %> |
+<%= link_to 'Back', contratos_path %>

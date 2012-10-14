@@ -1,0 +1,44 @@
+<div id="page">
+  <h5>Localidades</h5>
+   <!--inicio buscador-->
+  <div id="search">
+        <%= form_tag(localidades_path, :method => 'get',:id=>'buscar') %>
+          <table>
+            <tr>
+              <td><%= text_field_tag :txtbuscar, params[:txtbuscar], :class => "form-text" %></td>
+              <td><%= submit_tag "Buscar", :class => 'button' %></td>
+            </tr>
+           </table>
+  </div>
+  <!--fin buscador-->
+    <table>
+          <tr>
+            <th>Municipio</th>
+            <th>Localidad</th>
+          </tr>
+        <%unless @localidades.blank? %>
+          <% @localidades.each do |localidad| %>
+          <tr class="<%= cycle('rowA','rowB')%>">
+            <!-- <td><%#=h localidad.municipio_id.nil? ? "No tiene" : localidad.municipio_id.descripcion%></td> -->
+            <td><%=h Municipio.find(localidad.municipio_id).nombre %></td>
+            <td><%= localidad.nombre %></td>
+            <td><%= link_to 'Ver', localidad %></td>
+            <td><%= link_to 'Editar', edit_localidad_path(localidad) %></td>
+            <td><%= link_to 'Eliminar', localidad, :method => :delete, :data => { :confirm => 'Esta seguro?' } %></td>
+          </tr>
+          <% end %>
+        <%else%>
+          <tr>
+            <td><font color="red">No se encontraron resultados</font></td>
+          </tr>
+        <%end%>
+    </table>
+
+    <div style="text-align:center">
+        <%= will_paginate @localidades, :previous_label => '<< Anterior',:next_label => 'Siguiente >>'%>
+    </div>
+  
+        <%= link_to 'Nueva Localidad', new_localidad_path %>
+        <br class="clearfix" />
+        <br class="clearfix" />
+</div>

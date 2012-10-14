@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
+  <title>Ssop</title>
+  
+  <%= stylesheet_link_tag "style", "jquery-ui-1.8.24.custom", "jquery-autocomplete" %>
+  <%= javascript_include_tag "application" %>
+</head>
+<body>
+	<div id="outer">
+		<div id="wrapper">
+			<div id="header">
+				<div id="logo">
+					<h1>Sistema de Seguimiento de Obras P&uacute;blicas</h1>
+				</div>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="first"><a href="/home/index">Inicio</a></li> |
+					<li><a href="/obras">Obras</a></li> |
+					<li><a href="#">Certificados</a></li>|
+          <li><a href="/contratos">Contratos</a></li>|
+					<li><a href="/administracion/index">Administracion</a></li>
+				</ul>
+			<br class="clearfix" />
+			</div>
+			<!-- inicio flash notice -->
+      <%if flash[:error] -%>
+        <div class="ui-widget">
+         	<div class="ui-state-error" style="padding: 0 .7em;">
+         		<span class="ui-icon ui-icon-alert" style="margin-top: .3em; float: left; margin-right: .3em;"></span>
+				          <%= flash[:error]%>
+         	</div>
+        </div>
+      <%end -%>
+
+      <%if flash[:info] -%>
+        <div class="ui-widget">
+			    <div class="ui-state-highlight" style="padding: 0 .7em;">
+			      <span class="ui-icon ui-icon-info" style="margin-top: .3em; float: left; margin-right: .3em;">></span>
+			            <%= flash[:info]%>
+			    </div>
+		    </div>
+      <%end -%>
+      <!-- fin flash notice -->
+  			
+  			<%= yield %>  <!--contenido dinámico... me gusta full innovation! :D -->
+
+  			<div id="footer">
+     			Direccion de Coordinacion | 25 de mayo 888 Planta Baja | CP: 3400
+  			</div>
+  		</div>
+  	</div>
+</body>
+</html>

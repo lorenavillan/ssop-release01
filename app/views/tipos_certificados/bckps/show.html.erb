@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo certificado descripcion:</b>
+  <%= @tipo_certificado.tipo_certificado_descripcion %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%= @tipo_certificado.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_tipo_certificado_path(@tipo_certificado) %> |
+<%= link_to 'Back', tipos_certificados_path %>

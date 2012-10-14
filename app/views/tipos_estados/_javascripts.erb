@@ -1,0 +1,14 @@
+<script type="text/javascript">
+ $(document).ready(function () {
+     $("#new_tipo_estado, .edit_tipo_estado").validate({
+
+        rules: {
+        "tipo_estado[tipo_estado_descripcion]": {required: true, minlength: 3 , maxlength: 60 }
+        }
+      });
+  
+});
+
+
+
+</script>

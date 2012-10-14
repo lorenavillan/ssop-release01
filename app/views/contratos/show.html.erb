@@ -1,0 +1,56 @@
+<div id="page">
+  <h5>Contratistas</h5>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Obra:</b>
+  <%= @contrato.contrato_nombre_obra %>
+</p>
+
+<p>
+  <b>Contratista:</b>
+  <%= Contratista.find(@contrato.contratista_id).empresa %>
+</p>
+
+<p>
+  <b>Tipo norma legal:</b>
+  <%= TipoNormaLegal.find(@contrato.tipo_norma_legal_id).tipo_norma_legal_descripcion %>
+</p>
+<p>
+  <b>Nro. norma legal:</b>
+  <%= @contrato.contrato_nro_norma_legal %>
+</p>
+<p>
+  <b>Año norma legal:</b>
+  <%= @contrato.contrato_anio_norma_legal %>
+</p>
+<p>
+  <b>Nro. Expediente:</b>
+  <%= @contrato.contrato_expte %>
+</p>
+
+<p>
+  <b>Contrato fecha:</b>
+  <%= @contrato.contrato_fecha.strftime('%d/%m/%Y') if @contrato.contrato_fecha %>
+</p>
+
+<p>
+  <b>Contrato monto:</b>
+  <%= number_to_currency(@contrato.contrato_monto) %>
+  <%#= @contrato.contrato_monto %>
+</p>
+
+
+<p>
+  <b>Contrato plazo obra:</b>
+  <%= @contrato.contrato_plazo_obra %>
+</p>
+
+
+
+<%= link_to 'Editar', edit_contrato_path(@contrato) %> |
+<%= link_to 'Volver', contratos_path %>
+<br class="clearfix" />
+<br class="clearfix" />
+
+</div>

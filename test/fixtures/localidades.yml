@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  municipio_id: MyString
+  nombre: MyString
+  deleted_at: 2012-10-08 09:35:09
+
+two:
+  municipio_id: MyString
+  nombre: MyString
+  deleted_at: 2012-10-08 09:35:09

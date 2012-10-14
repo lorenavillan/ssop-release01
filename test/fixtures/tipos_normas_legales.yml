@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tipo_norma_legal_descripcion: MyString
+  deleted_at: 2012-10-08 10:28:40
+
+two:
+  tipo_norma_legal_descripcion: MyString
+  deleted_at: 2012-10-08 10:28:40

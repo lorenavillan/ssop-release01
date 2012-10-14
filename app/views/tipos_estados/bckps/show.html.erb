@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo estado descripcion:</b>
+  <%= @tipo_estado.tipo_estado_descripcion %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%= @tipo_estado.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_tipo_estado_path(@tipo_estado) %> |
+<%= link_to 'Back', tipos_estados_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contratista_nombre: MyString
+  contratista_apellido: MyString
+  empresa: MyString
+  contratista_cuit: 1
+  contratista_domicilio_legal: MyString
+  contratista_telefono: MyString
+  contratista_email: MyString
+  deleted_at: 2012-10-08 10:27:39
+
+two:
+  contratista_nombre: MyString
+  contratista_apellido: MyString
+  empresa: MyString
+  contratista_cuit: 1
+  contratista_domicilio_legal: MyString
+  contratista_telefono: MyString
+  contratista_email: MyString
+  deleted_at: 2012-10-08 10:27:39

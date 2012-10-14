@@ -1,0 +1,16 @@
+<div id="page">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo certificado:</b>
+  <%= @tipo_certificado.tipo_certificado_descripcion %>
+</p>
+
+<br class="clearfix" />
+
+
+<%= link_to 'Editar', edit_tipo_certificado_path(@tipo_certificado) %> |
+<%= link_to 'Volver', tipos_certificados_path %>
+<br class="clearfix" />
+<br class="clearfix" />
+</div>

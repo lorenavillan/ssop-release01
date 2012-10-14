@@ -1,0 +1,45 @@
+<div id="page">
+<h5>Estados de Obra</h5>
+<!--inicio buscador-->
+  <div id="search">
+        <%= form_tag(tipos_estados_path, :method => 'get',:id=>'buscar') %>
+          <table>
+            <tr>
+              <td><%= text_field_tag :txtbuscar, params[:txtbuscar], :class => "form-text" %></td>
+              <td><%= submit_tag "Buscar", :class => 'button' %></td>
+            </tr>
+           </table>
+  </div>
+  <!--fin buscador-->
+<br class="clearfix" />
+<table>
+  <tr>
+    <th>Estado</th>
+  </tr>
+<%unless @tipos_estados.blank? %>
+  <% @tipos_estados.each do |tipo_estado| %>
+  <tr class="<%= cycle('rowA','rowB')%>">
+    <td><%= tipo_estado.tipo_estado_descripcion %></td>
+    <td><%= link_to 'Ver', tipo_estado %></td>
+    <td><%= link_to 'Editar', edit_tipo_estado_path(tipo_estado) %></td>
+    <td><%= link_to 'Eliminar', tipo_estado, :method => :delete, :data => { :confirm => 'Esta seguro?' } %></td>
+  </tr>
+<% end %>
+<%else%>
+      <tr>
+        <td><font color="red">No se encontraron resultados</font></td>
+      </tr>
+<%end%>
+</table>
+
+<div style="text-align:center">
+    <%= will_paginate @tipos_estados, :previous_label => '<< Anterior',:next_label => 'Siguiente >>'%>
+</div>
+
+<br class="clearfix" />
+
+<%= link_to 'Nuevo Estado', new_tipo_estado_path %>
+
+<br class="clearfix" />
+<br class="clearfix" />
+</div>

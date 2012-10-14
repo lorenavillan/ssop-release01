@@ -1,0 +1,47 @@
+<script type="text/javascript">
+ $(document).ready(function () {
+     $("#new_contrato, .edit_contrato").validate({
+
+        rules: {
+        "contrato[contrato_nombre_obra]": {required: true, minlength: 3 , maxlength: 60 },
+        "contrato[contratista_id]": {required: true },
+        "contrato[municipio_id]": {required: true },
+        "contrato[localidad_id]": {required: true },
+        "contrato[localidad_id]": {required: true },
+        "contrato[tipo_norma_legal_id]": {required: true },
+        "contrato[contrato_nro_norma_legal]": {required: true, digits :true },
+        "contrato[contrato_anio_norma_legal]": {required: true, digits :true, maxlength: 4 },
+        "contrato[contrato_expte]": {required: true, digits :true },
+        "contrato[contrato_fecha]": {required: true }
+        }
+      });
+    $( "#contrato_contrato_fecha" ).datepicker({ changeMonth: true, changeYear: true});
+
+    //INICIO AUTOCOMPLETAR Contratista ...
+        $('#busq_nombre_contratista').autocomplete('<%= todos_contratistas_contratistas_path %>', {
+             dataType: "json",
+         parse: function(data) {
+                     return $.map(data, function(row) {
+                         return {
+                                 data: row,
+                                 value: $.trim(row.contratista_empresa),
+                                 result: $.trim(row.contratista_empresa)
+                         }
+                     });
+         },
+
+      formatItem: function(item) {
+          return item.contratista_empresa;
+      }
+      }).result(function(e, item) {
+        $("#contrato_contratista_id").val(item.id);
+        $("#busq_nombre_contratista").html(item.contratista_empresa);
+        
+      });
+
+  
+});
+
+
+
+</script>

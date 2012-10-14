@@ -1,0 +1,55 @@
+<div id="page">
+<h5>Contratos</h5>  
+  <!--inicio buscador-->
+  <div id="search">
+        <%= form_tag(contratos_path, :method => 'get',:id=>'buscar') %>
+          <table>
+            <tr>
+              <td><%= text_field_tag :txtbuscar, params[:txtbuscar], :class => "form-text" %></td>
+              <td><%= submit_tag "Buscar", :class => 'button' %>
+                  <%=image_tag 'tooltip.png' %>
+              </td>
+            </tr>
+           </table>
+  </div>
+  <!--fin buscador-->
+<br class="clearfix" /><br class="clearfix" /><!--Espaciadores para que la tabla no quede tan cerca del buscador-->
+<table>
+  <tr>
+    <th>Obra</th>
+    <th>Monto de Obra</th>
+    <th>Contratista</th>
+  </tr>
+<%unless @contratos.blank? %>
+    <% @contratos.each do |contrato| %>
+    <tr class="<%= cycle('rowA','rowB')-%>">       
+        <td><%= contrato.contrato_nombre_obra %></td>
+        <td><%= number_to_currency(contrato.contrato_monto) %></td> 
+        <td><%=h Contratista.find(contrato.contratista_id).empresa %></td>
+        <td><%= link_to 'Ver', contrato %></td>
+        <td><%= link_to 'Editar', edit_contrato_path(contrato) %></td>
+        <td><%= link_to 'Eliminar', contrato, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+<%else%>
+          <tr>
+            <td><font color="red">No se encontraron resultados</font></td>
+          </tr>
+<%end%>
+</table>
+
+
+<div style="text-align:center">
+    <%= will_paginate @contratos, :previous_label => '<< Anterior',:next_label => 'Siguiente >>'%>
+ </div>
+
+    <br class="clearfix" />
+    <%= link_to 'Nuevo Contrato', new_contrato_path %>
+    <br class="clearfix" />
+    <br class="clearfix" />
+</div>
+
+<br />
+
+
+</div>

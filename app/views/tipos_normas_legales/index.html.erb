@@ -1,0 +1,46 @@
+<div id="page">
+<h5>Tipos de Normas Legales</h5>
+<!--inicio buscador-->
+  <div id="search">
+        <%= form_tag(tipos_normas_legales_path, :method => 'get',:id=>'buscar') %>
+          <table>
+            <tr>
+              <td><%= text_field_tag :txtbuscar, params[:txtbuscar], :class => "form-text" %></td>
+              <td><%= submit_tag "Buscar", :class => 'button' %></td>
+            </tr>
+           </table>
+  </div>
+  <!--fin buscador-->
+  <br class="clearfix" />
+
+<table>
+  <tr>
+    <th>Tipo Norma Legal</th>
+  </tr>
+<%unless @tipos_normas_legales.blank? %>
+  <% @tipos_normas_legales.each do |tipo_norma_legal| %>
+  <tr class="<%= cycle('rowA','rowB')%>">
+    <td><%= tipo_norma_legal.tipo_norma_legal_descripcion %></td>
+    <td><%= link_to 'Ver', tipo_norma_legal %></td>
+    <td><%= link_to 'Editar', edit_tipo_norma_legal_path(tipo_norma_legal) %></td>
+    <td><%= link_to 'Eliminar', tipo_norma_legal, :method => :delete, :data => { :confirm => 'Esta seguro?' } %></td>
+  </tr>
+<% end %>
+<%else%>
+  <tr>
+    <td><font color="red">No se encontraron resultados</font></td>
+  </tr>
+<%end%>
+</table>
+
+<div style="text-align:center">
+    <%= will_paginate @tipos_normas_legales, :previous_label => '<< Anterior',:next_label => 'Siguiente >>'%>
+</div>
+
+<br class="clearfix" />
+<%= link_to 'Nuevo Tipo de Norma Legal', new_tipo_norma_legal_path %>
+
+<br class="clearfix" />
+<br class="clearfix" />
+
+</div>

@@ -1,0 +1,352 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: underline;
+	color: #5B874B;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	color: #4D4D4D;
+	font-size: 11.5pt;
+	line-height: 2em;
+
+}
+
+#outer {
+	padding: 80px 0 0 0;
+	background: #EDE8DE;
+	box-shadow: inset 0px 0px 130px 0px rgba(70,48,25,0.7);
+}
+
+body,input {
+	/*font-family: "Open Sans", sans-serif;*/
+	font-family: "trebuchet ms", sans-serif;
+}
+
+br.clearfix {
+	clear: both;
+}
+
+h1,h2,h3,h4 {
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 2.25em;
+}
+
+h2,h3,h4,h5 {
+	margin-bottom: 1em;
+	color: #333;
+	font-family: Abel, sans-serif;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+h5 {
+	font-size: 1.75em;
+	border-bottom: dotted 2px #73B05E; /* coloca borde punteado */
+
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+strong {
+	color: #333;
+}
+
+img.alignleft {
+	float: left;
+	margin: 5px 30px 30px 0;
+	border-radius: 6px;
+}
+
+img.aligntop {
+	margin: 5px 0 20px 0;
+	border-radius: 6px;
+}
+
+p {
+	margin-bottom: 1.75em;
+}
+
+ul {
+	margin-bottom: 1.75em;
+}
+
+ul h4 {
+	margin-bottom: 0.4em;
+}
+
+ul {
+	list-style: none;
+}
+
+.box {
+	margin: 0 0 35px 0;
+	overflow: hidden;
+}
+
+.info {
+	margin: 0 0 35px 0;
+	border-radius: 6px;
+	/*background-color: #abd6a4;*/
+	padding: 10px 0 10px 0;
+	width: 550px;
+	/*color: #938D82;
+	text-shadow: 1px 1px 0px #ffffff;*/
+}
+
+.section-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+.section-list li {
+	padding: 25px 0 25px 0;
+	clear: both;
+}
+
+ul.list li {
+	border-top: solid 1px #CFCFCF;
+	padding: 10px 0 10px 0;
+}
+
+ul.list li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#content {
+	padding: 0;
+	width: 750px;
+	margin: 0 0 0 350px;
+}
+
+#contentSection {
+	padding: 0;
+	width: 750px;
+	margin: 0 0 0 50px;
+}
+
+/* añadido */
+
+#page table
+{
+	margin-bottom: 1.5em;	
+}
+
+#page table th
+{
+	text-align: left;
+	font-weight: bold;
+	padding: 0.5em;
+	text-align: center;
+}
+
+#page table td
+{
+	padding: 0.2em;
+
+}
+
+#page table tr.rowA
+{
+	background-color: #EAEFE0;
+	color: inherit;
+}
+
+#page table tr .rowB
+{
+	background-color: #000;
+	color: inherit;
+}
+
+/* fin añadido */
+
+#footer {
+	text-align: center;
+	padding: 50px 0 130px 0;
+	color: #938D82;
+	text-shadow: 1px 1px 0px #ffffff;
+}
+
+#footer a {
+	color: #938D82;
+}
+
+
+#header {
+	position: relative;
+	padding: 40px;
+	height: 70px;
+	background: #73B05E;
+	color: #FFF;
+	box-shadow: inset 0px -10px 50px 0px #53903E;
+	overflow: hidden;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+#headerSection {
+	position: relative;
+	padding: 30px;
+	height: 40px;
+}
+
+#logo {
+	height: 147px;
+	line-height: 147px;
+	left: 40px;
+	bottom: 0;
+	position: absolute;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+#logo a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#logo h1 {
+	font-family: Abel, sans-serif;
+	font-size: 3.5em;
+}
+
+#menu {
+	padding: 0 40px 0 40px;
+	font-family: Abel, sans-serif;
+	line-height: 60px;
+	margin: 0;
+	background: #5B874B;
+	height: 60px;
+	width: 1100px;
+	box-shadow: inset 0px -3px 20px 0px #466D37;
+	border-top: solid 1px #93D07E;
+	border-bottom: solid 1px #93D07E;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	/*border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	text-align: center;*/
+}
+
+
+
+#menu a {
+	font-size: 1.25em;
+	color: #FFF;
+	text-decoration: none;
+}
+
+#menu ul {
+	list-style: none;
+}
+
+#menu ul li {
+	padding: 0 20px 0 20px;
+	display: inline;
+}
+
+#menu ul li.first {
+	padding-left: 0;
+}
+
+#page {
+	margin: 0;
+	width: 1100px;
+	padding: 70px 40px 0 40px;
+	position: relative;
+	background: #FFF;
+	box-shadow: inset 0px 0px 3px 0px #ffffff, inset 0px 0px 250px 0px #d8d8d8, 0px 10px 20px 0px #D6CCBA;
+	text-shadow: 1px 1px 0px #ffffff;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+
+#col1 {
+	overflow: hidden;
+	width: 355px;
+	float: left;
+}
+
+#col2 {
+	width: 355px;
+	margin: 0 0 0 390px;
+	overflow: hidden;
+}
+
+#search {
+	bottom: 0;
+	margin-top: 12px;
+	margin-bottom: 33px;
+	height: 147px;
+	position: absolute; top: 50px; right: 50px;
+	line-height: 147px;
+	right: 40px;
+}
+
+#search input.form-text {
+	border: 0;
+	padding: 8px 40px 9px 9px;
+	/*background: #5B874B url(images/search.png) top right no-repeat;*/
+	/*background: #5B874B;*/
+	box-shadow: inset 0px -3px 20px 0px #fff;
+	border: solid 1px #93D07E;
+	/*text-shadow: 0px 0px 1px rgba(0,0,0,0.5);*/
+	color: #5B874B;
+	border-radius: 6px;
+}
+
+
+#sidebar {
+	float: left;
+	padding: 0;
+	width: 315px;
+}
+
+#wrapper {
+	width: 1180px;
+	position: relative;
+	margin: 0 auto;
+}
+
+/*
+#error_explanation{
+	background: #5B874B;
+}*/
+
+
+/*botones*/
+.button{
+border:1px solid #8ed058; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-family:arial, helvetica, sans-serif; padding: 5px 10px 5px 10px; text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; text-align: center; color: #FFFFFF; background-color: #a9db80;
+ background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a9db80), color-stop(100%, #96c56f));
+ background-image: -webkit-linear-gradient(top, #a9db80, #96c56f);
+ background-image: -moz-linear-gradient(top, #a9db80, #96c56f);
+ background-image: -ms-linear-gradient(top, #a9db80, #96c56f);
+ background-image: -o-linear-gradient(top, #a9db80, #96c56f);
+ background-image: linear-gradient(top, #a9db80, #96c56f);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a9db80, endColorstr=#96c56f);
+}
+
+.button:hover{
+ border:1px solid #8ed058; background-color: #8ed058;
+ background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8ed058), color-stop(100%, #7bb64b));
+ background-image: -webkit-linear-gradient(top, #8ed058, #7bb64b);
+ background-image: -moz-linear-gradient(top, #8ed058, #7bb64b);
+ background-image: -ms-linear-gradient(top, #8ed058, #7bb64b);
+ background-image: -o-linear-gradient(top, #8ed058, #7bb64b);
+ background-image: linear-gradient(top, #8ed058, #7bb64b);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#8ed058, endColorstr=#7bb64b);
+}
+
+

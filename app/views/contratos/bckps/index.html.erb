@@ -1,0 +1,47 @@
+<h1>Listing contratos</h1>
+
+<table>
+  <tr>
+    <th>Contratista</th>
+    <th>Tipo norma legal</th>
+    <th>Municipio</th>
+    <th>Localidad</th>
+    <th>Contrato nombre obra</th>
+    <th>Contrato expte</th>
+    <th>Contrato nro norma legal</th>
+    <th>Contrato anio norma legal</th>
+    <th>Contrato fecha</th>
+    <th>Contrato monto</th>
+    <th>Contrato plazo obra</th>
+    <th>Finalizado</th>
+    <th>Deleted at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contratos.each do |contrato| %>
+  <tr>
+    <td><%= contrato.contratista_id %></td>
+    <td><%= contrato.tipo_norma_legal_id %></td>
+    <td><%= contrato.municipio_id %></td>
+    <td><%= contrato.localidad_id %></td>
+    <td><%= contrato.contrato_nombre_obra %></td>
+    <td><%= contrato.contrato_expte %></td>
+    <td><%= contrato.contrato_nro_norma_legal %></td>
+    <td><%= contrato.contrato_anio_norma_legal %></td>
+    <td><%= contrato.contrato_fecha %></td>
+    <td><%= contrato.contrato_monto %></td>
+    <td><%= contrato.contrato_plazo_obra %></td>
+    <td><%= contrato.finalizado %></td>
+    <td><%= contrato.deleted_at %></td>
+    <td><%= link_to 'Show', contrato %></td>
+    <td><%= link_to 'Edit', edit_contrato_path(contrato) %></td>
+    <td><%= link_to 'Destroy', contrato, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contrato', new_contrato_path %>

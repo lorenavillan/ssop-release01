@@ -1,0 +1,17 @@
+<div id="page">
+<h5>Estado de Obra</h5>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Estado:</b>
+  <%= @tipo_estado.tipo_estado_descripcion %>
+</p>
+
+
+<%= link_to 'Editar', edit_tipo_estado_path(@tipo_estado) %> |
+<%= link_to 'Volver', tipos_estados_path %>
+
+<br class="clearfix" />
+<br class="clearfix" />
+
+</div>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contratista_id: 1
+  tipo_norma_legal_id: 1
+  municipio_id: 1
+  localidad_id: 1
+  contrato_nombre_obra: MyString
+  contrato_expte: 1
+  contrato_nro_norma_legal: 1
+  contrato_anio_norma_legal: 1
+  contrato_fecha: 2012-10-08
+  contrato_monto: 1.5
+  contrato_plazo_obra: 1
+  finalizado: false
+  deleted_at: 2012-10-08 13:44:13
+
+two:
+  contratista_id: 1
+  tipo_norma_legal_id: 1
+  municipio_id: 1
+  localidad_id: 1
+  contrato_nombre_obra: MyString
+  contrato_expte: 1
+  contrato_nro_norma_legal: 1
+  contrato_anio_norma_legal: 1
+  contrato_fecha: 2012-10-08
+  contrato_monto: 1.5
+  contrato_plazo_obra: 1
+  finalizado: false
+  deleted_at: 2012-10-08 13:44:13

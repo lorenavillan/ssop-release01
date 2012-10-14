@@ -1,0 +1,58 @@
+<%= form_for(@obra) do |f| %>
+  <% if @obra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@obra.errors.count, "error") %> no ha permitido que la obra sea guardada:</h2>
+
+      <ul>
+      <% @obra.errors.full_messages.each do |msg| %>
+        <li><font color="red"><%= msg %></font></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- autocompletar contrato -->
+  <div class="field", id="contrato_asociado">
+  <%= f.label 'Contrato' %><br />
+  <%= text_field_tag :busq_nombre_obra, nil,:size=>40,:placeholder => 'Ingrese contrato de obra ...', 
+  :value => @obra.contrato_nombre_obra%>
+  <%= f.hidden_field :contrato_id %>
+   </div>
+   <div >
+    <%= label_tag "contrato_monto", "Monto de Contrato:"%>&nbsp; 
+    <span id="contrato_monto"><%= number_to_currency @obra.contrato_monto %></span><br />
+    <%= label_tag "plazo_obra", "Plazo de Obra:"%>&nbsp;
+    <span id="plazo_obra"><%= @obra.contrato_plazo_obra %></span><br />
+    <%= label_tag "contratista", "Contratista:"%>&nbsp;
+    <span id="contratista_nombre"><%= @obra.contratista_nombre %></span><br />
+    <%= label_tag "ubicacion", "Ubicacion (Municipio - Localidad):"%>&nbsp;
+    <span id="ubicacion"><%= @obra.ubicacion %></span>
+   </div>
+  <!-- fin autocompletar contrato -->
+  <br class="clearfix" />
+  <div class="field">
+    <%= f.label 'Estado Obra' %><br />
+    <%= f.select :estado_id, TipoEstado.find(:all, :order => "tipo_estado_descripcion").collect{|c| [c.tipo_estado_descripcion, c.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label 'Fecha de Inicio de Obra' %><br />
+    <%#= f.date_select :obra_fecha_inicio %>
+    <%= f.text_field :obra_fecha_inicio, :value => (@obra.obra_fecha_inicio.strftime('%d/%m/%Y') if @obra.obra_fecha_inicio) %>
+  </div>
+
+    <div class="field">
+    <%= f.label 'Fecha de entrega definitiva de Obra' %><br />
+    <%#= f.date_select :obra_fecha_fin %>
+    <%= f.text_field :obra_fecha_fin, :value => (@obra.obra_fecha_fin.strftime('%d/%m/%Y') if @obra.obra_fecha_fin) %>
+  </div>
+  
+  <br class="clearfix" />
+  <div class="actions">
+    <%= f.submit 'Guardar', :class=>'button' %>
+  </div>
+
+  <br class="clearfix" />
+
+<% end %>
+
+<%= render(:partial => "javascripts") %>

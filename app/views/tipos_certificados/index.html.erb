@@ -1,0 +1,46 @@
+<div id="page">
+<h5>Tipos de Certificados</h5>
+<!--inicio buscador-->
+  <div id="search">
+        <%= form_tag(tipos_certificados_path, :method => 'get',:id=>'buscar') %>
+          <table>
+            <tr>
+              <td><%= text_field_tag :txtbuscar, params[:txtbuscar], :class => "form-text" %></td>
+              <td><%= submit_tag "Buscar", :class => 'button' %></td>
+            </tr>
+           </table>
+  </div>
+  <!--fin buscador-->
+<br class="clearfix" />
+<table>
+  <tr>
+    <th>Tipo certificado descripcion</th>
+  </tr>
+  <%unless @tipos_certificados.blank? %>
+    <% @tipos_certificados.each do |tipo_certificado| %>
+      <tr class="<%= cycle('rowA','rowB')%>">
+        <td><%= tipo_certificado.tipo_certificado_descripcion %></td>
+        <td><%= link_to 'Ver', tipo_certificado %></td>
+        <td><%= link_to 'Editar', edit_tipo_certificado_path(tipo_certificado) %></td>
+        <td><%= link_to 'Eliminar', tipo_certificado, :method => :delete, :data => { :confirm => 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  <%else%>
+      <tr>
+        <td><font color="red">No se encontraron resultados</font></td>
+      </tr>
+  <%end%>
+</table>
+
+<div style="text-align:center">
+    <%= will_paginate @tipos_certificados, :previous_label => '<< Anterior',:next_label => 'Siguiente >>'%>
+</div>
+
+<br class="clearfix" />
+
+<%= link_to 'Nuevo Tipo de Certificado', new_tipo_certificado_path %>
+
+<br class="clearfix" />
+<br class="clearfix" />
+
+</div>

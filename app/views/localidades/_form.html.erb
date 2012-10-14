@@ -1,0 +1,31 @@
+
+    <%= form_for(@localidad) do |f| %>
+      <% if @localidad.errors.any? %>
+      <!-- <div id="error_explanation"> -->
+       <h2><%= pluralize(@localidad.errors.count, "error") %> no ha permitido que la localidad sea guardada:</h2>
+       <ul>
+           <% @localidad.errors.full_messages.each do |msg| %>
+            <li><font color="red"><%= msg %></font></li>
+           <% end %>
+       </ul>
+      <!--  </div> -->
+    <% end %>
+
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :municipio %><br />
+    <%#= f.number_field :municipio_id %>
+    <%= f.select :municipio_id, Municipio.find(:all, :order => "nombre").collect{|c| [c.nombre, c.id] } %>
+  </p>
+
+  <div class="actions">
+    <br class="clearfix" />
+    <%= f.submit 'Guardar', :class=>'button' %>
+  </div>
+
+<% end %>
+
+<%= render(:partial => "javascripts") %>

@@ -1,0 +1,37 @@
+<h1>Listing contratistas</h1>
+
+<table>
+  <tr>
+    <th>Contratista nombre</th>
+    <th>Contratista apellido</th>
+    <th>Empresa</th>
+    <th>Contratista cuit</th>
+    <th>Contratista domicilio legal</th>
+    <th>Contratista telefono</th>
+    <th>Contratista email</th>
+    <th>Deleted at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contratistas.each do |contratista| %>
+  <tr>
+    <td><%= contratista.contratista_nombre %></td>
+    <td><%= contratista.contratista_apellido %></td>
+    <td><%= contratista.empresa %></td>
+    <td><%= contratista.contratista_cuit %></td>
+    <td><%= contratista.contratista_domicilio_legal %></td>
+    <td><%= contratista.contratista_telefono %></td>
+    <td><%= contratista.contratista_email %></td>
+    <td><%= contratista.deleted_at %></td>
+    <td><%= link_to 'Show', contratista %></td>
+    <td><%= link_to 'Edit', edit_contratista_path(contratista) %></td>
+    <td><%= link_to 'Destroy', contratista, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contratista', new_contratista_path %>

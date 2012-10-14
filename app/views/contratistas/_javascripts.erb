@@ -1,0 +1,18 @@
+<script type="text/javascript">
+ $(document).ready(function () {
+     $("#new_contratista, .edit_contratista").validate({
+
+        rules: {
+        "contratista[contratista_nombre]": {required: true, minlength: 3 , maxlength: 60 },
+        "contratista[contratista_apellido]": {required: true, minlength: 3 , maxlength: 60 },
+        "contratista[empresa]": {required: true, minlength: 3 , maxlength: 60 },
+        "contratista[contratista_cuit]": {digits: true, required: true, minlength: 8 , maxlength: 11 },
+        "contratista[contratista_email]": {email: true, minlength: 8 , maxlength: 30 },
+        }
+      });
+  
+});
+
+
+
+</script>

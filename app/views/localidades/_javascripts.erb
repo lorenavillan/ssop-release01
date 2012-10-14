@@ -1,0 +1,15 @@
+<script type="text/javascript">
+ $(document).ready(function () {
+     $("#new_localidad, .edit_localidad").validate({
+
+        rules: {
+        "localidad[nombre]": {required: true, minlength: 3 , maxlength: 60 },
+        "localidad[municipio_id]": {required: true}
+        }
+      });
+  
+});
+
+
+
+</script>

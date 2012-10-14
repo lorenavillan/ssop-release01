@@ -1,0 +1,69 @@
+<%= form_for(@contrato) do |f| %>
+  <% if @contrato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contrato.errors.count, "error") %> prohibited this contrato from being saved:</h2>
+
+      <ul>
+      <% @contrato.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contratista_id %><br />
+    <%= f.number_field :contratista_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_norma_legal_id %><br />
+    <%= f.number_field :tipo_norma_legal_id %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio_id %><br />
+    <%= f.number_field :municipio_id %>
+  </div>
+  <div class="field">
+    <%= f.label :localidad_id %><br />
+    <%= f.number_field :localidad_id %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato_nombre_obra %><br />
+    <%= f.text_field :contrato_nombre_obra %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato_expte %><br />
+    <%= f.number_field :contrato_expte %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato_nro_norma_legal %><br />
+    <%= f.number_field :contrato_nro_norma_legal %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato_anio_norma_legal %><br />
+    <%= f.number_field :contrato_anio_norma_legal %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato_fecha %><br />
+    <%= f.date_select :contrato_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato_monto %><br />
+    <%= f.text_field :contrato_monto %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato_plazo_obra %><br />
+    <%= f.number_field :contrato_plazo_obra %>
+  </div>
+  <div class="field">
+    <%= f.label :finalizado %><br />
+    <%= f.check_box :finalizado %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted_at %><br />
+    <%= f.datetime_select :deleted_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,51 @@
+<%= form_for(@contratista) do |f| %>
+  <% if @contratista.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contratista.errors.count, "error") %> no ha permitido que el contratista sea guardado:</h2>
+
+      <ul>
+      <% @contratista.errors.full_messages.each do |msg| %>
+        <li><font color="red"><%= msg %></font></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%#= f.label :contratista_nombre %>
+    <%= f.label 'Nombre' %><br />
+    <%= f.text_field :contratista_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label 'Apellido' %><br />
+    <%= f.text_field :contratista_apellido %>
+  </div>
+  <div class="field">
+    <%= f.label 'Empresa' %><br />
+    <%= f.text_field :empresa %>
+  </div>
+  <div class="field">
+    <%= f.label 'CUIT' %><br />
+    <%= f.number_field :contratista_cuit %>
+  </div>
+  <div class="field">
+    <%= f.label 'Domicilio Legal' %><br />
+    <%= f.text_field :contratista_domicilio_legal %>
+  </div>
+  <div class="field">
+    <%= f.label 'Telefono Fijo - Celular' %><br />
+    <%= f.text_field :contratista_telefono %>
+  </div>
+  <div class="field">
+    <%= f.label 'Correo Electronico' %><br />
+    <%= f.text_field :contratista_email %>
+  </div>
+
+  <br class="clearfix" />
+
+  <div class="actions">
+    <%= f.submit 'Guardar', :class=> "button" %>
+  </div>
+<% end %>
+
+<%= render(:partial => "javascripts") %>

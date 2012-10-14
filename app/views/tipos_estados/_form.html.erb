@@ -1,0 +1,26 @@
+<%= form_for(@tipo_estado) do |f| %>
+  <% if @tipo_estado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo_estado.errors.count, "error") %> no ha permitido que el tipo de estado de obra sea guardado:</h2>
+
+      <ul>
+      <% @tipo_estado.errors.full_messages.each do |msg| %>
+        <li><font color="red"><%= msg %></font></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Estado' %><br />
+    <%= f.text_field :tipo_estado_descripcion %>
+  </div>
+
+<br class="clearfix" />
+  <div class="actions">
+    <%= f.submit 'Guardar', :class=> 'button'%>
+  </div>
+  <br class="clearfix" />
+<% end %>
+
+<%= render(:partial => "javascripts") %>

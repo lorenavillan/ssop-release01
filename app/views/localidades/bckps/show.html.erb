@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Municipio:</b>
+  <%= @localidad.municipio_id %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @localidad.nombre %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%= @localidad.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_localidad_path(@localidad) %> |
+<%= link_to 'Back', localidades_path %>

@@ -1,0 +1,56 @@
+<div id="page">
+<h5>Obras</h5>
+<!--inicio buscador-->
+  <div id="search">
+        <%= form_tag(obras_path, :method => 'get',:id=>'buscar') %>
+          <table>
+            <tr>
+              <td><%= text_field_tag :txtbuscar, params[:txtbuscar], :class => "form-text" %></td>
+              <td><%= submit_tag "Buscar", :class => 'button' %></td>
+            </tr>
+           </table>
+  </div>
+  <!--fin buscador-->
+<br class="clearfix" />
+<table>
+  <tr>
+    <th>Obra</th>
+    <th>Estado</th>
+    <th>Obra fecha inicio</th>
+    <th>Obra fecha fin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ <%unless @obras.blank? %>
+    <% @obras.each do |obra| %>
+      <tr class="<%= cycle('rowA','rowB')%>">
+        <td><%= "#{obra.contrato_nombre_obra}" %></td>
+        <!--<td><%#= obra.contrato_id %></td>-->
+        <td><%= obra.tipo_estado_descripcion %></td>
+        <td><%= obra.obra_fecha_inicio.strftime('%d/%m/%Y') if obra.obra_fecha_inicio %></td>
+        <td><%= obra.obra_fecha_fin.strftime('%d/%m/%Y') if obra.obra_fecha_fin %></td>
+        <td><%= link_to 'Ver', obra %></td>
+        <td><%= link_to 'Editar', edit_obra_path(obra) %></td>
+        <td><%= link_to 'Eliminar', obra, :method => :delete, :data => { :confirm => 'Esta seguro?' } %></td>
+      </tr>
+     <% end %>
+ <%else%>
+     <tr>
+        <td><font color="red">No se encontraron resultados</font></td>
+     </tr>
+ <%end%>
+</table>
+
+<div style="text-align:center">
+    <%= will_paginate @tipos_certificados, :previous_label => '<< Anterior',:next_label => 'Siguiente >>'%>
+</div>
+
+<br class="clearfix" />
+
+<%= link_to 'Nueva Obra', new_obra_path %>
+
+<br class="clearfix" />
+<br class="clearfix" />
+
+</div>

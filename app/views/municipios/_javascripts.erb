@@ -1,0 +1,14 @@
+<script type="text/javascript">
+ $(document).ready(function () {
+     $("#new_municipio, .edit_municipio").validate({
+
+        rules: {
+        "municipio[nombre]": {required: true, minlength: 3 , maxlength: 60 }
+        }
+      });
+  
+});
+
+
+
+</script>

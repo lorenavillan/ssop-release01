@@ -1,0 +1,27 @@
+<%= form_for(@tipo_norma_legal) do |f| %>
+  <% if @tipo_norma_legal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo_norma_legal.errors.count, "error") %> no ha permitido que el tipo de norma legal sea guardada:</h2>
+
+      <ul>
+      <% @tipo_norma_legal.errors.full_messages.each do |msg| %>
+        <li><font color="red"><%= msg %></font></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Tipo Norma Legal' %><br />
+    <%= f.text_field :tipo_norma_legal_descripcion %>
+  </div>
+
+<br class="clearfix" />
+  
+  <div class="actions">
+    <%= f.submit 'Guardar', :class=> 'button'%>
+  </div>
+<% end %>
+
+
+<%= render(:partial => "javascripts") %>

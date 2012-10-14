@@ -1,0 +1,36 @@
+<div id="page">
+  <h5>Obra</h5>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Informacion del Contrato:</b><br />
+  <%= "Obra: #{@obra.contrato_nombre_obra}" %><br />
+  <%= "Monto: #{number_to_currency @obra.contrato_monto}" %><br />
+  <%= "Plazo: #{@obra.contrato_plazo_obra}" %><br />
+  <%= "Contratista: #{@obra.contratista_nombre}" %><br />
+  <%= "Ubicacion: #{@obra.ubicacion}" %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%#= @obra.estado_id %>
+  <%= @obra.tipo_estado_descripcion %>
+</p>
+
+<p>
+  <b>Obra fecha inicio:</b>
+  <%= @obra.obra_fecha_inicio.strftime('%d/%m/%Y') if @obra.obra_fecha_inicio %>
+</p>
+
+<p>
+  <b>Obra fecha fin:</b>
+  <%= @obra.obra_fecha_fin.strftime('%d/%m/%Y') if @obra.obra_fecha_fin %>
+</p>
+
+
+<%= link_to 'Editar', edit_obra_path(@obra) %> |
+<%= link_to 'Volver', obras_path %>
+<br class="clearfix" />
+<br class="clearfix" />
+
+</div>

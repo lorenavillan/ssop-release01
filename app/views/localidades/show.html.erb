@@ -1,0 +1,22 @@
+<div id="page">
+<h5>Localidad</h5>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Municipio:</b>
+  <%#= @localidad.municipio_id %>
+  <%= Municipio.find(@localidad.municipio_id).nombre %>
+</p>
+
+<p>
+  <b>Localidad:</b>
+  <%= @localidad.nombre %>
+</p>
+
+
+
+<%= link_to 'Editar', edit_localidad_path(@localidad) %> |
+<%= link_to 'Volver', localidades_path %>
+<br class="clearfix" />
+<br class="clearfix" />
+</div>

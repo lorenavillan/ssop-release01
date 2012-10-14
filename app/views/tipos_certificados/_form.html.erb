@@ -1,0 +1,29 @@
+<%= form_for(@tipo_certificado) do |f| %>
+  <% if @tipo_certificado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo_certificado.errors.count, "error") %> no ha permitido que el tipo de certificado sea guardado:</h2>
+
+      <ul>
+      <% @tipo_certificado.errors.full_messages.each do |msg| %>
+        <li><font color="red"><%= msg %></font></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Descripcion' %><br />
+    <%= f.text_field :tipo_certificado_descripcion %>
+  </div>
+
+  <br class="clearfix" />
+  <div class="actions">
+    <%= f.submit 'Guardar', :class=>'button' %>
+  </div>
+  
+  <br class="clearfix" />
+  <br class="clearfix" />
+
+<% end %>
+
+<%= render(:partial => "javascripts") %>

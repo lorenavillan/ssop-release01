@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipo norma legal descripcion:</b>
+  <%= @tipo_norma_legal.tipo_norma_legal_descripcion %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%= @tipo_norma_legal.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_tipo_norma_legal_path(@tipo_norma_legal) %> |
+<%= link_to 'Back', tipos_normas_legales_path %>

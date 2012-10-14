@@ -1,0 +1,49 @@
+<%= form_for(@contratista) do |f| %>
+  <% if @contratista.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contratista.errors.count, "error") %> prohibited this contratista from being saved:</h2>
+
+      <ul>
+      <% @contratista.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contratista_nombre %><br />
+    <%= f.text_field :contratista_nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :contratista_apellido %><br />
+    <%= f.text_field :contratista_apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :empresa %><br />
+    <%= f.text_field :empresa %>
+  </div>
+  <div class="field">
+    <%= f.label :contratista_cuit %><br />
+    <%= f.number_field :contratista_cuit %>
+  </div>
+  <div class="field">
+    <%= f.label :contratista_domicilio_legal %><br />
+    <%= f.text_field :contratista_domicilio_legal %>
+  </div>
+  <div class="field">
+    <%= f.label :contratista_telefono %><br />
+    <%= f.text_field :contratista_telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :contratista_email %><br />
+    <%= f.text_field :contratista_email %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted_at %><br />
+    <%= f.datetime_select :deleted_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

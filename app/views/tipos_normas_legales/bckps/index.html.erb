@@ -1,0 +1,25 @@
+<h1>Listing tipos_normas_legales</h1>
+
+<table>
+  <tr>
+    <th>Tipo norma legal descripcion</th>
+    <th>Deleted at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tipos_normas_legales.each do |tipo_norma_legal| %>
+  <tr>
+    <td><%= tipo_norma_legal.tipo_norma_legal_descripcion %></td>
+    <td><%= tipo_norma_legal.deleted_at %></td>
+    <td><%= link_to 'Show', tipo_norma_legal %></td>
+    <td><%= link_to 'Edit', edit_tipo_norma_legal_path(tipo_norma_legal) %></td>
+    <td><%= link_to 'Destroy', tipo_norma_legal, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tipo norma legal', new_tipo_norma_legal_path %>

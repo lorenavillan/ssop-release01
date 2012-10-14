@@ -1,0 +1,44 @@
+<script type="text/javascript">
+ $(document).ready(function () {
+//INICIO AUTOCOMPLETAR Contrato ...
+		$('#busq_nombre_obra').autocomplete('<%= todos_contratos_path %>', {
+			 dataType: "json",
+  		 parse: function(data) {
+					 return $.map(data, function(row) {
+						 return {
+								 data: row,
+								 value: $.trim(row.contrato_nombre_obra),
+								 result: $.trim(row.contrato_nombre_obra)
+						 }
+					 });
+  		 },
+
+      formatItem: function(item) {
+          return item.contrato_nombre_obra;
+      }
+      }).result(function(e, item) {
+        $("#obra_contrato_id").val(item.id);
+        $("#plazo_obra").html(item.contrato_plazo_obra);
+        $("#contrato_monto").html("$"+item.contrato_monto);
+        $("#contratista_nombre").html(item.contratista_nombre);
+        $("#ubicacion").html(item.ubicacion);
+
+        
+      });
+
+    //Inicio fechas
+    $( "#obra_obra_fecha_inicio" ).datepicker({ changeMonth: true, changeYear: true});
+    $( "#obra_obra_fecha_fin" ).datepicker({ changeMonth: true, changeYear: true});
+
+    //Inicio Validaciones de campos
+    $("#new_obra, .edit_obra").validate({
+        rules: {
+          "obra[obra_fecha_inicio]": {required: true},
+          "obra[obra_fecha_fin]": {required: true}
+        }
+      });
+
+
+
+});
+</script>

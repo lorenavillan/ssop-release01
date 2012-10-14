@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contrato_id: 1
+  estado_id: 1
+  obra_fecha_inicio: 2012-10-08
+  obra_fecha_fin: 2012-10-08
+
+two:
+  contrato_id: 1
+  estado_id: 1
+  obra_fecha_inicio: 2012-10-08
+  obra_fecha_fin: 2012-10-08
